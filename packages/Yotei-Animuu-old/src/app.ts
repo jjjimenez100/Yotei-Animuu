@@ -1,0 +1,1 @@
+console.log('Your typescript project starts here!');
