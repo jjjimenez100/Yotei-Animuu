@@ -1,2 +1,2 @@
 // TODO
-module.exports = () => {};
+module.exports = () => console.log('TODO');
