@@ -1,6 +1,6 @@
 {
   "name": "@yotei-animuu/persistence",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Persistence layer for yotei-animuu packages",
   "author": "jjjimenez100 <jimenez.johnjoshua.jjj@gmail.com>",
   "license": "ISC",
