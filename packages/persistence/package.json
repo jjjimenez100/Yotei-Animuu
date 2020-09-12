@@ -1,0 +1,16 @@
+{
+  "name": "@yotei-animuu/persistence",
+  "version": "1.0.0",
+  "description": "Persistence layer for yotei-animuu packages",
+  "author": "jjjimenez100 <jimenez.johnjoshua.jjj@gmail.com>",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjjimenez100/Yotei-Animuu.git"
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.1.0",
+    "uuid": "^8.3.0"
+  }
+}
