@@ -1,0 +1,10 @@
+{
+  "name": "@yotei-animuu/http-api",
+  "version": "1.0.0",
+  "repository": "https://github.com/jjjimenez100/Yotei-Animuu",
+  "author": "jjjimenez100 <jimenez.johnjoshua.jjj@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@yotei-animuu/core": "^1.0.0"
+  }
+}
