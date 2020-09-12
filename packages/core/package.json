@@ -9,6 +9,7 @@
     "start": "node src/app.js"
   },
   "dependencies": {
+    "cron": "^1.8.2",
     "jikanjs": "^0.7.0",
     "nyaapi": "^2.3.3",
     "webtorrent": "^0.108.6"
