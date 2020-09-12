@@ -1,18 +1,16 @@
 const jikanjs = require('jikanjs');
-const { pantsu } = require('nyaapi');
+const { si } = require('nyaapi');
 
 /**
  * Wrappers
  */
 
-const getAllSchedules = async () => {
-   const schedules = await jikanjs.loadSchedule();
-   return schedules;
+const getAllSchedules = () => {
+   return jikanjs.loadSchedule();
 };
 
-const getSchedulesByDay = async day => {
-   const schedulesByDay = await jikanjs.loadSchedule(day);
-   return schedulesByDay;
+const getSchedulesByDay = day => {
+   return jikanjs.loadSchedule(day);
 };
 
 const findAnimeDetails = async searchQuery => {
@@ -24,13 +22,14 @@ const findAnimeDetails = async searchQuery => {
    return results;
 };
 
-const findTorrentsForAnime = async searchQuery => {
+const findTorrentsForAnime = async (searchQuery, limit = 3) => {
    if(!searchQuery || searchQuery.length < 3) {
       return [];
    }
 
-   const results = await pantsu.search(searchQuery, 5);
-   return results;
+   const results = await si.search(searchQuery, limit);
+   return results
+      .sort((a, b) => b.seeders - a.seeders);
 };
 
 module.exports = {
