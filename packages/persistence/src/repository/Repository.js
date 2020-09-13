@@ -21,15 +21,27 @@ class Repository {
     return preparedStatement.get();
   }
 
-  update(id, details = {}) {
-    const setQuery = Object.keys(details).map(detailKey => `${detailKey} = ?`).join(', ');
+  save(id, properties) {
+    const columns = `(id, ${Object.keys(properties).join(',')})`;
+    const values = new Array(Object.keys(properties).length).fill('?').join(',');
+    const insertQuery = `
+      INSERT INTO ${this.tableName} ${columns} VALUES (${values})
+    `;
+    const preparedStatement = this.database.prepare(insertQuery);
+
+    return preparedStatement.run([id, ...Object.values(properties)]);
+  }
+
+  update(id, properties = {}) {
+    const setQuery = Object.keys(properties).map(detailKey => `${detailKey} = ?`).join(', ');
     const updateQuery = `
       UPDATE ${this.tableName} 
       WHERE id = ? 
       SET ${setQuery}
     `;
     const preparedStatement = this.database.prepare(updateQuery);
-    return preparedStatement.run(Object.values(details));
+
+    return preparedStatement.run(Object.values(properties));
   }
 
   delete(id) {
