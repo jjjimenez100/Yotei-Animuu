@@ -1,3 +1,5 @@
+const { CronJob } = require('cron');
+
 class Scheduler {
   static stopJob(jobInstance) {
     jobInstance.stop();
@@ -11,8 +13,7 @@ class Scheduler {
     jobInstance.setTime(time);
   }
 
-  constructor(CronJob) {
-    this.CronJob = CronJob;
+  constructor() {
     this.time = null;
     this.handler = () => {};
     this.onComplete = () => {};
@@ -40,7 +41,7 @@ class Scheduler {
   }
 
   trigger() {
-    return new this.CronJob(
+    return new CronJob(
         this.time,
         this.handler,
         this.onComplete,
