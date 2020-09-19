@@ -9,6 +9,9 @@
   "directories": {
     "lib": "lib"
   },
+  "bin": {
+    "yotei-animuu": "./lib/index.js"
+  },
   "files": [
     "lib"
   ],
