@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const clear = require('clear');
 const chalk = require('chalk');
 const figlet = require('figlet');
@@ -65,6 +67,10 @@ const main = async () => {
   );
 
   const DOWNLOADS_FOLDER_PATH = getDownloadsFolder();
+  console.log(
+      MAIN_THEME(`\nDownloads will be saved at ${DOWNLOADS_FOLDER_PATH}`),
+  );
+
   const {anime} = await cli.askAnimeToFetch();
   const spinner = ora('Fetching results from nyaa.si');
 
