@@ -75,7 +75,7 @@ const main = async () => {
   const spinner = ora('Fetching results from nyaa.si');
 
   spinner.start();
-  const animeResults = await AnimeFetcher.search(anime);
+  const animeResults = await AnimeFetcher.search(anime, 20);
   spinner.stop();
   const {chosenAnime} = await cli.askWhichAnimeToDownload(animeResults);
   const torrentManager = initializeTorrentManager();
