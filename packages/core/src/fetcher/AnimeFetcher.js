@@ -11,4 +11,4 @@ const findTorrentsForAnime = async (searchQuery, limit = 3) => {
       .sort((a, b) => b.seeders - a.seeders);
 };
 
-module.exports = new Fetcher(findTorrentsForAnime());
+module.exports = new Fetcher(findTorrentsForAnime);
