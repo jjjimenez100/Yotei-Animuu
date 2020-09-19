@@ -12,16 +12,9 @@ const DOWNLOAD_TO_FILESYSTEM_DOWNLOAD_PROGRESS = 'downloadToFileSystem.downloadP
 const DOWNLOAD_TO_FILESYSTEM_UPLOAD_PROGRESS = 'downloadToFileSystem.uploadProgress';
 
 class TorrentManager extends EventEmitter {
-  constructor() {
+  constructor(logger = null) {
     super();
-  }
-
-  log(message, ...params) {
-    if (!this.debug) {
-      return;
-    }
-
-    console.log(message, params);
+    this.log = logger || function () {};
   }
 
   streamTorrentFileToDOM (magnetURI, domElement, fileNameQuery) {
@@ -31,9 +24,7 @@ class TorrentManager extends EventEmitter {
     });
   };
 
-  async downloadToFileSystem(magnetURI, outputFolderPath, debug = false) {
-    this.debug = debug;
-
+  downloadToFileSystem(magnetURI, outputFolderPath) {
     const torrentEntity = new Torrent(magnetURI, outputFolderPath);
     client.add(magnetURI, {path: outputFolderPath}, torrent => {
       torrent.on('metadata', () => {
@@ -85,9 +76,8 @@ class TorrentManager extends EventEmitter {
         this.log('Closing connections...');
         torrent.destroy((err, results) => {
           this.log('Connections closed');
+          this.emit(DOWNLOAD_TO_FILESYSTEM_DONE, torrentEntity);
         });
-
-        this.emit(DOWNLOAD_TO_FILESYSTEM_DONE, torrentEntity);
       });
 
       torrent.on('error', err => {
@@ -99,13 +89,13 @@ class TorrentManager extends EventEmitter {
 }
 
 module.exports = {
-  TorrentManager: new TorrentManager(),
-  emittedEvents: [
+  TorrentManager,
+  emittedEvents: {
     DOWNLOAD_TO_FILESYSTEM_DONE,
     ERROR_DOWNLOADING_TO_FILESYSTEM,
     TORRENT_DETAILS_ACQUIRED,
     DOWNLOAD_TO_FILESYSTEM_WARNING,
     DOWNLOAD_TO_FILESYSTEM_DOWNLOAD_PROGRESS,
     DOWNLOAD_TO_FILESYSTEM_UPLOAD_PROGRESS,
-  ],
+  },
 };
