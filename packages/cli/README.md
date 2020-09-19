@@ -27,6 +27,7 @@ After selecting the torrent of your choice, you are updated with the progress of
 The CLI app automatically exists upon finishing the download.
 ![Download Completed](https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/119521484_3333595860038419_2959575329921975943_n.png?_nc_cat=104&_nc_sid=b96e70&_nc_eui2=AeH6t3VnY_8zu-wx0JhEd3Y7E0-YQbRpCJUTT5hBtGkIlfxkzZgoyCO1j11JWzr3Gom7fgKc4Xs-aoaeKdy71GYB&_nc_ohc=aaOhX4eBevIAX-kdhAW&_nc_ht=scontent.fcrk1-1.fna&oh=25c9da3673bff2d20cb1b0b86eaa9c6c&oe=5F8BCADE)
 
+
 ## Notes
 * Any downloading related issues should be reported and tagged with [@yoteii-animuu/core](https://www.npmjs.com/package/@yotei-animuu/core), as this is only an interface.
 * The CLI app uses an external npm dependency ([downloads-folder](https://www.npmjs.com/package/downloads-folder)) that automatically identifies the user's download folder location, regardless of what specific OS is being used.
