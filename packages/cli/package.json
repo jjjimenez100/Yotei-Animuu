@@ -1,13 +1,13 @@
 {
   "name": "@yotei-animuu/cli",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "CLI app for yotei-animuu modules",
   "author": "jjjimenez100 <jimenez.johnjoshua.jjj@gmail.com>",
   "homepage": "https://github.com/jjjimenez100/Yotei-Animuu#readme",
   "license": "ISC",
   "main": "index.js",
   "directories": {
-    "lib": "lib"  
+    "lib": "lib"
   },
   "files": [
     "lib"
@@ -26,7 +26,7 @@
     "url": "https://github.com/jjjimenez100/Yotei-Animuu/issues"
   },
   "dependencies": {
-    "@yotei-animuu/core": "^1.2.3",
+    "@yotei-animuu/core": "^1.4.0",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "downloads-folder": "^3.0.0",
