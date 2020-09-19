@@ -38,7 +38,7 @@ class Torrent {
   }
 
   downloadSpeed(downloadSpeed) {
-    this._dowloadSpeed = prettifyBytes(downloadSpeed);
+    this._downloadSpeed = prettifyBytes(downloadSpeed);
     return this;
   }
 
