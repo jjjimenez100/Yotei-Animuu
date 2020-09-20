@@ -21,6 +21,8 @@ cli.cleanup(() => console.log(chalk.red('\nRyoukai!')));
 
 const initializeTorrentManager = () => {
   const torrentManager = new TorrentManager();
+  const torrentSpinner = ora('Fetching torrent metadata');
+
   torrentManager.on(TORRENT_DETAILS_ACQUIRED, torrentEntity => {
     console.log(
         chalk.green('Got torrent metadata')
@@ -31,18 +33,25 @@ const initializeTorrentManager = () => {
   });
 
   torrentManager.on(DOWNLOAD_TO_FILESYSTEM_DOWNLOAD_PROGRESS, torrentEntity => {
-    console.log(
-        chalk.grey(`Download Speed: ${torrentEntity._downloadSpeed} | Downloaded: ${torrentEntity._downloaded} | Progress: ${torrentEntity._progress} | Remaining time: ${torrentEntity._timeRemaining}`)
-    );
+    if (!torrentSpinner.isSpinning) {
+      torrentSpinner.start();
+    }
+
+    torrentSpinner.text = chalk.grey(`Download Speed: ${torrentEntity._downloadSpeed}/s | Downloaded: ${torrentEntity._downloaded} | Progress: ${torrentEntity._progress}% | Remaining time: ${torrentEntity._timeRemaining}`)
+    ;
   });
 
   torrentManager.on(DOWNLOAD_TO_FILESYSTEM_DONE, torrentEntity => {
+    if (torrentSpinner.isSpinning) {
+      torrentSpinner.succeed();
+    }
+
     console.log(
         chalk.green(`\nDownload Complete. Total downloaded: ${torrentEntity._downloaded}`)
     );
     console.log(
         MAIN_THEME(`Check your file at ${torrentEntity._outputFolderPath}`)
-    )
+    );
     process.exit(0);
   });
 
@@ -71,16 +80,26 @@ const main = async () => {
       MAIN_THEME(`\nDownloads will be saved at ${DOWNLOADS_FOLDER_PATH}`),
   );
 
-  const {anime} = await cli.askAnimeToFetch();
   const spinner = ora('Fetching results from nyaa.si');
+  try {
+    const {anime} = await cli.askAnimeToFetch();
+    spinner.start();
+    const animeResults = await AnimeFetcher.search(anime, 20);
+    spinner.succeed();
 
-  spinner.start();
-  const animeResults = await AnimeFetcher.search(anime, 20);
-  spinner.stop();
-  const {chosenAnime} = await cli.askWhichAnimeToDownload(animeResults);
-  const torrentManager = initializeTorrentManager();
-  const {magnet} = chosenAnime;
-  torrentManager.downloadToFileSystem(magnet, DOWNLOADS_FOLDER_PATH);
+    const {chosenAnime} = await cli.askWhichAnimeToDownload(animeResults);
+    const torrentManager = initializeTorrentManager();
+    const {magnet} = chosenAnime;
+    torrentManager.downloadToFileSystem(magnet, DOWNLOADS_FOLDER_PATH);
+
+  } catch (error) {
+    if (spinner.isSpinning) {
+      spinner.fail();
+    }
+
+    console.log(chalk.red('Encountered error: ', error));
+    process.exit(0);
+  }
 };
 
 main();
