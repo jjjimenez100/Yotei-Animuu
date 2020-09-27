@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/jjjimenez100/Yotei-Animuu/compare/v1.4.6...v1.5.0) (2020-09-27)
+
+
+### Features
+
+* **cli:** queueing of multiple anime downloads ([72f44d8](https://github.com/jjjimenez100/Yotei-Animuu/commit/72f44d8bc9281a90863ea2b18e66b369d2fb5708))
+
+
+
+
+
 ## [1.4.6](https://github.com/jjjimenez100/Yotei-Animuu/compare/v1.4.5...v1.4.6) (2020-09-20)
 
 **Note:** Version bump only for package @yotei-animuu/cli
