@@ -40,7 +40,7 @@ const askWhichAnimeToDownload = animeList => {
 
   const question = {
     name: 'chosenAnime',
-    type: 'list',
+    type: 'checkbox',
     message: 'Choose which torrent to download:',
     choices: animeChoices,
     validate: value => {
@@ -50,6 +50,7 @@ const askWhichAnimeToDownload = animeList => {
 
   return inquirer.prompt([question]);
 };
+
 const askAnimeToFetch = () => {
   const question = {
     name: 'anime',
@@ -66,7 +67,20 @@ const askAnimeToFetch = () => {
   return inquirer.prompt([question]);
 }
 
+const askToContinueChoosingAnotherDownload = () => {
+  const question = {
+    name: 'shouldContinue',
+    type: 'confirm',
+    message: 'Search another anime?',
+    default: true,
+    validate: value => !!value,
+  };
+
+  return inquirer.prompt([question]);
+}
+
 module.exports = {
+  askToContinueChoosingAnotherDownload,
   askWhichAnimeToDownload,
   askAnimeToFetch,
   cleanup,
