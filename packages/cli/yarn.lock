@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.1.tgz#56af902ad157e763f9ba63d671c39cda3193c835"
   integrity sha512-oTQgnd0hblfLsJ6BvJzzSL+Inogp3lq9fGgqRkMB/ziKMgEUaFl801OncOzUmalfzt14N0oPHMK47ipl+wbTIw==
 
-"@yotei-animuu/core@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@yotei-animuu/core/-/core-1.2.3.tgz#2e704b8eeef83747b2133ea33db90c9216b34a84"
-  integrity sha512-UCCSNIYSJWMDDI80++GG9YGh2yEJoLK/+63FyLLQAfVsgabvof1cF87yb4in0mfVP+cOaTSz4wKL7IFFrMxR+w==
+"@yotei-animuu/core@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@yotei-animuu/core/-/core-1.4.0.tgz#77116b69b2ec3d8f49ec79155de955bab0cdaeb3"
+  integrity sha512-StM/iI1saa93Xmh8HMy5Wo55Mx+mh0WqMJC1KkowgUAhGH2/Fv3naUc0oM5VoANijzRpT3Is0bMRTOZSI1cajA==
   dependencies:
     cron "^1.8.2"
     jikanjs "^0.7.0"
@@ -1048,9 +1048,9 @@ lodash.omit@^4.5.0:
   integrity sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA=
 
 lodash@^4.15.0, lodash@^4.17.19:
-  version "4.17.20"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^4.0.0:
   version "4.0.0"
