@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.1.tgz#56af902ad157e763f9ba63d671c39cda3193c835"
   integrity sha512-oTQgnd0hblfLsJ6BvJzzSL+Inogp3lq9fGgqRkMB/ziKMgEUaFl801OncOzUmalfzt14N0oPHMK47ipl+wbTIw==
 
-"@yotei-animuu/core@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@yotei-animuu/core/-/core-1.2.3.tgz#2e704b8eeef83747b2133ea33db90c9216b34a84"
-  integrity sha512-UCCSNIYSJWMDDI80++GG9YGh2yEJoLK/+63FyLLQAfVsgabvof1cF87yb4in0mfVP+cOaTSz4wKL7IFFrMxR+w==
+"@yotei-animuu/core@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@yotei-animuu/core/-/core-1.4.0.tgz#77116b69b2ec3d8f49ec79155de955bab0cdaeb3"
+  integrity sha512-StM/iI1saa93Xmh8HMy5Wo55Mx+mh0WqMJC1KkowgUAhGH2/Fv3naUc0oM5VoANijzRpT3Is0bMRTOZSI1cajA==
   dependencies:
     cron "^1.8.2"
     jikanjs "^0.7.0"
@@ -1127,9 +1127,9 @@ minimatch@^3.0.4:
     brace-expansion "^1.1.7"
 
 minimist@^1.1.0, minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 mkdirp-classic@^0.5.2:
   version "0.5.3"
