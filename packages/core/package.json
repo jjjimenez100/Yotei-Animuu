@@ -11,7 +11,7 @@
   "dependencies": {
     "cron": "^1.8.2",
     "jikanjs": "^0.7.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "nyaapi": "^2.3.3",
     "webtorrent": "^0.108.6"
   }
